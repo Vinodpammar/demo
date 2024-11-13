@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking</title>
+
+    <style>
+        body
+{
+    background: url(booking.jpg)no-repeat;
+    background-size: cover;
+    color:black;
+    padding: 20px;
+            max-width: 600px;
+            margin:0  auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            position: absolute
+}
+
+    </style>
+    
+    
+    <script>
+        function validateForm() {
+            var airplaneNumber = document.getElementById("airplaneNumber").value;
+            var source = document.getElementById("source").value;
+            var destination = document.getElementById("destination").value;
+            var date = document.getElementById("date").value;
+
+            if (airplaneNumber === "" || source === "" || destination === "" || date === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            if (source == destination) {
+                alert("Source and destination cannot be the same");
+                return false;
+            }
+
+            // You can add more specific validation rules if needed.
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form method="get" action="card.html">
+        <h1>Ticket Booking</h1>
+        <fieldset style="width: 300px;">
+            <label for="airplaneNumber">Airplane Number:</label>
+            <input type="text" id="airplaneNumber" name="airplaneNumber" placeholder="Enter Number"><br><br>
+
+            <label for="source">From:</label>
+            <select id="source" name="source">
+                <option value="" disabled selected>Select source</option>
+                <option value="CityA">Bangalore</option>
+                <option value="CityB">Hyderabad</option>
+                <option value="CityB">Delhi</option>
+                <option value="CityB">Goa</option>
+                <option value="CityB">Mumbai</option>
+                <option value="CityB">Channai</option>
+                
+            </select><br><br>
+
+            <label for="destination">To:</label>
+            <select id="destination" name="destination">
+                <option value="" disabled selected>Select destination</option>
+                <option value="CityA">Bangalore</option>
+                <option value="CityB">Hyderabad</option>
+                <option value="CityB">Delhi</option>
+                <option value="CityB">Goa</option>
+                <option value="CityB">Mumbai</option>
+                <option value="CityB">Channai</option>
+                
+            </select><br><br>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date"><br><br>
+
+            <input type="submit" name="submit">
+        </fieldset>
+    </form>
+</body>
+</html>
